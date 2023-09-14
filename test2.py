@@ -8,8 +8,8 @@ class FB2Parser:
     def __init__(self, filepath):
         self.book_path = filepath
 
-    @staticmethod
     # При поиске элемента в soup ьожет вернуться None есди элемент не найден. Если это произошло функция возвращает пустую строку.
+    @staticmethod
     def get_element_text_or_none(element):
         if element:
             return element.text
