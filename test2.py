@@ -77,9 +77,12 @@ if __name__ == '__main__':
     file_path = rf'{sys.argv[1]}'
     file_extention = pathlib.Path(file_path).suffix
 
-    if file_extention == '.epub':
-        print(EpubParser(file_path).parse_data())
-    elif file_extention == '.fb2':
-        print(FB2Parser(file_path).parse_data())
-    else:
-        print('Wrong file format')
+    try:
+        if file_extention == '.epub':
+            print(EpubParser(file_path).parse_data())
+        elif file_extention == '.fb2':
+            print(FB2Parser(file_path).parse_data())
+        else:
+            print('Wrong file format')
+    except FileNotFoundError:
+        print('Not a valid file')
