@@ -93,5 +93,6 @@ if __name__ == '__main__':
                 f.writelines(json.dumps(SortFile(filepath).amount_of_ids_is_3()))
             with open('sorted_file', 'w') as f:
                 f.writelines(json.dumps(SortFile(filepath).sorted_dict()))
+            print('Values wrote in files')
         except FileNotFoundError:
             print('Not a valid file')
